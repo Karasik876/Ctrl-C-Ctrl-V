@@ -46,8 +46,8 @@ def split_boxed(img, questions, answers):
 
 
 def show_answers(img, index, grading, answers, questions, choices):
-    secW = int(img.shape[1] / questions)
-    secH = int(img.shape[0] / choices)
+    secW = int(img.shape[1] / choices)
+    secH = int(img.shape[0] / questions)
     for x in range(0, questions):
         ans = index[x]
         cX = (ans * secW) + secW // 2
@@ -57,8 +57,8 @@ def show_answers(img, index, grading, answers, questions, choices):
             rep_color = (0, 255, 0)
         else:
             rep_color = (0, 0, 255)
-            cv2.circle(img, (answers[x] * secW + secW // 2, x * secH + secH // 2), 50, (255, 0, 0), cv2.FILLED)
-        cv2.circle(img, (cX, cY), 50, rep_color, cv2.FILLED)
+            cv2.circle(img, (answers[x] * secW + secW // 2, x * secH + secH // 2), secH//2, (255, 0, 0), cv2.FILLED)
+        cv2.circle(img, (cX, cY), secH//2, rep_color, cv2.FILLED)
     return img
 
 
