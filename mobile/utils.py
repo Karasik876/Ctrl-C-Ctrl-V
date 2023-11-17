@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import cryptocode
+# import cryptocode
 import uuid
 
 
@@ -56,18 +56,15 @@ def show_answers(img, index, grading, answers, questions, choices):
         if grading[x] >= 1:
             rep_color = (0, 255, 0)
         else:
-            rep_color = (0, 0, 255)
-            cv2.circle(img, (answers[x] * secW + secW // 2, x * secH + secH // 2), secH//2, (255, 0, 0), cv2.FILLED)
-        cv2.circle(img, (cX, cY), secH//2, rep_color, cv2.FILLED)
+            rep_color = (255, 0, 0)
+            cv2.circle(img, (answers[x] * secW + secW // 2, x * secH + secH // 2), int(secH/2), (0, 0, 255), cv2.FILLED)
+        cv2.circle(img, (cX, cY), int(secH/2), rep_color, cv2.FILLED)
     return img
 
 
-def encrypt(text):
-    key = f'{uuid.uuid4()}'
-    print(f'{cryptocode.encrypt(text, key)},{key}')
-    return f'{cryptocode.encrypt(text, key)},{key}'
-
-
-def decrypt(value):
-    text, key = value.split(',')
-    return cryptocode.decrypt(text, key)
+# def encrypt(text):
+#     return f'{cryptocode.encrypt(text, "omr")}'
+#
+#
+# def decrypt(value):
+#     return cryptocode.decrypt(value, 'omr')
