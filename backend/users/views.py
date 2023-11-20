@@ -19,10 +19,8 @@ class UserViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(self):
         if self.action == 'edit_get' or self.action == 'edit_post':
-            self.serializer_class = UserEditSerializer
-        else:
-            self.serializer_class = UserDetailSerializer
-        return self.serializer_class
+            return UserEditSerializer
+        return UserDetailSerializer
 
     @action(detail=True)
     def user_detail(self, request: Request, *args, **kwargs):

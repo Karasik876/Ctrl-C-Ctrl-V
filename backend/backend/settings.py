@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 config = dotenv_values(f'{BASE_DIR}/.env')
 SECRET_KEY = config['SECRET_KEY']
 AUTH_USER_MODEL = 'users.UserAccount'
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
@@ -23,7 +24,9 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'users',
-    'tests'
+    'tests',
+    'classes',
+    'sheets',
 ]
 
 MIDDLEWARE = [
@@ -59,11 +62,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config['DB_NAME'],
-        'USER': config['DB_USER'],
-        'PASSWORD': config['DB_PASSWORD'],
-        'HOST': config['DB_HOST'],
-        'PORT': config['DB_PORT'],
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'pgdb',
+        'PORT': 5432,
 
     }
 }

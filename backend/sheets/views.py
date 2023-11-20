@@ -8,30 +8,28 @@ from .serializers import *
 from .models import *
 
 
-class TestViewSet(viewsets.ModelViewSet):
-    Test = Test
+class SheetViewSet(viewsets.ModelViewSet):
+    Sheet = Sheet
 
     def get_permissions(self):
-        self.permission_classes = (IsAuthenticated,)
+        self.permission_classes = (AllowAny,)
         return tuple(permission() for permission in self.permission_classes)
 
     def get_serializer_class(self):
         if self.action == 'create_post':
-            return TestCreateSerializer
-        return TestDetailSerializer
+            return SheetCreateSerializer
+        return SheetDetailSerializer
 
     @action(detail=True)
     def create_post(self, request: Request, *args, **kwargs):
-        data = request.data
-        data['user_id'] = request.user.id
-        serializer = TestCreateSerializer(data=data)
+        serializer = SheetCreateSerializer(data=request.data)
         if serializer.is_valid():
             serializer.create(request.data)
             return Response(status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=True)
-    def test_detail(self, request: Request, *args, **kwargs):
-        test = get_object_or_404(self.Test, pk=kwargs['id'])
-        serializer = TestDetailSerializer(test)
+    def sheet_detail(self, request: Request, *args, **kwargs):
+        test = get_object_or_404(self.Sheet, pk=kwargs['id'])
+        serializer = SheetDetailSerializer(test)
         return Response(serializer.data)

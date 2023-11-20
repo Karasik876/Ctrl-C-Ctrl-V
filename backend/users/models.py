@@ -33,11 +33,11 @@ class UserAccountManager(BaseUserManager):
 
 class UserAccount(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=50, unique=True)
-    first_name = models.CharField(max_length=12)
-    last_name = models.CharField(max_length=12)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
+    first_name = models.CharField(max_length=12, verbose_name='Имя')
+    last_name = models.CharField(max_length=12, verbose_name='Фамилия')
+    is_active = models.BooleanField(default=True, verbose_name='Прошел активацию')
+    is_staff = models.BooleanField(default=False, verbose_name='Служебный аккаунт')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
 
     objects = UserAccountManager()
 
