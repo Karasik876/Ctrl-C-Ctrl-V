@@ -33,3 +33,9 @@ class SheetViewSet(viewsets.ModelViewSet):
         test = get_object_or_404(self.Sheet, pk=kwargs['id'])
         serializer = SheetDetailSerializer(test)
         return Response(serializer.data)
+
+    @action(detail=True)
+    def delete_sheet(self, request: Request, *args, **kwargs):
+        sheet = get_object_or_404(self.Sheet, pk=kwargs["id"])
+        sheet.delete()
+        return Response(status=status.HTTP_200_OK)

@@ -18,6 +18,8 @@ class TestViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == 'create_post':
             return TestCreateSerializer
+        elif self.action == 'edit_get' or self.action == 'edit_post':
+            return TestEditSerializer
         return TestDetailSerializer
 
     @action(detail=True)
@@ -35,3 +37,26 @@ class TestViewSet(viewsets.ModelViewSet):
         test = get_object_or_404(self.Test, pk=kwargs['id'])
         serializer = TestDetailSerializer(test)
         return Response(serializer.data)
+
+    @action(detail=True)
+    def edit_get(self, request: Request, *args, **kwargs):
+        test = get_object_or_404(self.Test, pk=kwargs["id"])
+        serializer = self.serializer_class(test)
+        return Response(serializer.data)
+
+    @action(detail=True)
+    def edit_post(self, request: Request, *args, **kwargs):
+        test = get_object_or_404(self.Test, pk=kwargs["id"])
+        if request.user.id:
+            data = request.data
+            serializer = self.serializer_class(data=data, partial=True)
+            if serializer.is_valid():
+                serializer.update(instance=test, validated_data=data)
+                return Response(status=status.HTTP_201_CREATED)
+        return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
+
+    @action(detail=True)
+    def delete_class(self, request: Request, *args, **kwargs):
+        test = get_object_or_404(self.Test, pk=kwargs["id"])
+        test.delete()
+        return Response(status=status.HTTP_200_OK)

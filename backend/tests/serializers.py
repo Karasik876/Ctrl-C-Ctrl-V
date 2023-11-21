@@ -18,6 +18,18 @@ class TestCreateSerializer(serializers.ModelSerializer):
         return Test.objects.create(**validated_data)
 
 
+class TestEditSerializer(serializers.ModelSerializer):
+    class Meta(serializers.SerializerMetaclass):
+        model = Test
+        fields = (
+            'the_class_id',
+            'test_name',
+            'questions',
+            'choices',
+            'answers'
+        )
+
+
 class TestDetailSerializer(serializers.ModelSerializer):
     class Meta(serializers.SerializerMetaclass):
         model = Test

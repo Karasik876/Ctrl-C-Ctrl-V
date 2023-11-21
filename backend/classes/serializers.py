@@ -16,6 +16,16 @@ class ClassCreateSerializer(serializers.ModelSerializer):
         return Class.objects.create(**validated_data)
 
 
+class ClassEditSerializer(serializers.ModelSerializer):
+    class Meta(serializers.SerializerMetaclass):
+        model = Class
+        fields = (
+            'class_name',
+            'class_number',
+            'class_letter',
+        )
+
+
 class ClassDetailSerializer(serializers.ModelSerializer):
     class Meta(serializers.SerializerMetaclass):
         model = Class

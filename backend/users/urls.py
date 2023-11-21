@@ -4,7 +4,7 @@ from . import views
 from djoser.views import UserViewSet
 
 urlpatterns = [
-    path("edit/<int:id>", views.UserViewSet.as_view({"get": "edit_get", "post": "edit_post"}), name="edit"),
+    path("edit/<int:id>", views.UserViewSet.as_view({"get": "edit_get", "patch": "edit_post"}), name="edit"),
     path("detail/<int:id>/", views.UserViewSet.as_view({"get": "user_detail"}), name="user_detail"),
     path("me/", views.UserViewSet.as_view({"get": "user_me"}), name="user_me"),
     path('auth/signup', UserViewSet.as_view({'post': 'create'}), name="register"),

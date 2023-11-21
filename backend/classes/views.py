@@ -14,6 +14,8 @@ class ClassViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == 'create_post':
             return ClassCreateSerializer
+        elif self.action == 'edit_get' or self.action == 'edit_post':
+            return ClassEditSerializer
         return ClassDetailSerializer
 
     def get_permissions(self):
@@ -35,3 +37,26 @@ class ClassViewSet(viewsets.ModelViewSet):
         the_class = get_object_or_404(self.Class, pk=kwargs['id'])
         serializer = ClassDetailSerializer(the_class)
         return Response(serializer.data)
+
+    @action(detail=True)
+    def edit_get(self, request: Request, *args, **kwargs):
+        user = get_object_or_404(self.Class, pk=kwargs["id"])
+        serializer = self.serializer_class(user)
+        return Response(serializer.data)
+
+    @action(detail=True)
+    def edit_post(self, request: Request, *args, **kwargs):
+        class_ = get_object_or_404(self.Class, pk=kwargs["id"])
+        if request.user.id:
+            data = request.data
+            serializer = self.serializer_class(data=data, partial=True)
+            if serializer.is_valid():
+                serializer.update(instance=class_, validated_data=data)
+                return Response(status=status.HTTP_201_CREATED)
+        return Response(status=status.HTTP_406_NOT_ACCEPTABLE)
+
+    @action(detail=True)
+    def delete_class(self, request: Request, *args, **kwargs):
+        class_ = get_object_or_404(self.Class, pk=kwargs["id"])
+        class_.delete()
+        return Response(status=status.HTTP_200_OK)
