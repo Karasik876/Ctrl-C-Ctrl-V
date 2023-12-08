@@ -1,7 +1,5 @@
 import cv2
 import numpy as np
-# import cryptocode
-import uuid
 
 
 def rectangle_contour(contours):
@@ -45,9 +43,16 @@ def split_boxed(img, questions, answers):
     return boxes
 
 
+def show_corners(img, corners_ans, corners_name):
+    cv2.drawContours(img, corners_ans, -1, (0, 255, 0), 20)
+    cv2.drawContours(img, corners_name, -1, (0, 255, 0), 20)
+    return img
+
+
 def show_answers(img, index, grading, answers, questions, choices):
     secW = int(img.shape[1] / choices)
     secH = int(img.shape[0] / questions)
+    diam = int(secH/2)
     for x in range(0, questions):
         ans = index[x]
         cX = (ans * secW) + secW // 2
@@ -57,8 +62,8 @@ def show_answers(img, index, grading, answers, questions, choices):
             rep_color = (0, 255, 0)
         else:
             rep_color = (255, 0, 0)
-            cv2.circle(img, (answers[x] * secW + secW // 2, x * secH + secH // 2), int(secH/2), (0, 0, 255), cv2.FILLED)
-        cv2.circle(img, (cX, cY), int(secH/2), rep_color, cv2.FILLED)
+            cv2.circle(img, (answers[x] * secW + secW // 2, x * secH + secH // 2), diam, (0, 0, 255), cv2.FILLED)
+        cv2.circle(img, (cX, cY), diam, rep_color, cv2.FILLED)
     return img
 
 
