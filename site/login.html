@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название вашей страницы</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Подключение вашего CSS файла -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Patua+One&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="main-header">
+    <nav class="main-nav">
+        <div class="left-section">
+            <h1 class="project-name"><a href="index.html">Ally</a></h1>
+            <a href="templates.html" class="test-templates-link">Шаблоны тестов</a>
+        </div>
+        <div class="right-section">
+            <div class="auth-buttons">
+                <a href="login.html" class="login-button">Вход</a>
+                <a href="registration.html" class="create-account-button">Создать аккаунт</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <h1>Вход</h1>
+    <form onsubmit="handleLogin(event)">
+        <label for="username_or_email">Имя пользователя или Email:</label>
+        <input type="text" id="username_or_email" name="username_or_email" required>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Войти</button>
+    </form>
+    <a href="registration.html">Зарегистрировать новый аккаунт</a>
+    <a href="password_recovery.html">Восстановить пароль</a>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const usernameOrEmail = document.getElementById('username_or_email').value;
+            const password = document.getElementById('password').value;
+        }
+    </script>
+
+</main>
+
+
+
+
+
+
+</body>
+
+</html>

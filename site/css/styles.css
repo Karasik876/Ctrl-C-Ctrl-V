@@ -1,0 +1,184 @@
+/* Стили для хедера и его содержимого */
+.main-header {
+    background-color: #423CDB;
+    height: 52px;
+    width: 100%;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin:0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрирование по вертикали */
+    height: 100%; /* Заполнение всей доступной высоты хедера */
+    max-width: 1100px; /* Ограничение ширины .main-nav */
+    margin: 0 auto; /* Центрирование .main-nav на странице */
+    padding: 0 20px; /* Добавление отступов внутри .main-nav */
+    width: 100%; /* Добавлено для адаптивности */
+    box-sizing: border-box; /* Учитывать padding и border в расчете ширины */
+    flex-wrap: wrap; /* Разрешить перенос элементов на следующую строку */
+}
+
+
+/* Стили для названия проекта "Ally" */
+/* Добавление шрифта Patua One к названию "Ally" */
+.project-name {
+    font-family: 'Patua One', sans-serif; /* Использование шрифта Patua One */
+    font-size: 30px; /* Размер шрифта названия проекта */
+    color: white;
+    line-height: 20px;
+    margin: 0;
+
+}
+.project-name a{
+    color: white;
+    text-decoration: none;
+}
+.project-name:active {
+    transform: translateY(2px); /* Пример сдвига вниз при нажатии */
+}
+/* Стили для шаблонов тестов */
+/* Добавленные стили для левой и правой частей хедера */
+.left-section {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Увеличение размера left-section */
+    text-overflow: ellipsis; /* Добавление многоточия для текста, выходящего за пределы */
+    white-space: nowrap; /* Предотвращение переноса текста */
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Увеличение размера right-section */
+    justify-content: flex-end;
+}
+
+.test-templates-link{
+    font-size: 17px;
+    color: white;
+    line-height: 20px;
+    margin: 0;
+    margin-left: 16px;
+    text-decoration: none;
+}
+.test-templates-link:active{
+    transform: translateY(1px);
+}
+/* Стили для кнопок входа и создания аккаунта */
+/* Добавление шрифта Open Sans Semibold к кнопкам "Вход" и "Создать аккаунт" */
+.main-content-auth-buttons a, .auth-buttons a {
+    font-family: 'Open Sans', sans-serif; /* Использование шрифта Open Sans */
+    font-weight: 600; /* Semibold в Open Sans */
+    font-size: 13px; /* Размер шрифта кнопок */
+    color: white;
+    text-decoration: none;
+    margin-left: 20px; /* Пространство между кнопками */
+    padding: 8px 15px;
+    border-radius: 4px; /* Закругленные углы для кнопки "Создать аккаунт" */
+}
+.main-content-auth-buttons a{
+    color: #423CDB;
+}
+/* Указание шрифта для конкретных классов кнопок */
+.main-content-auth-buttons a.login-button, .auth-buttons a.login-button {
+    font-family: 'Open Sans', sans-serif; /* Использование шрифта Open Sans для кнопки "Вход" */
+    font-weight: 600; /* Semibold в Open Sans */
+    border: none; /* Удаление рамки у кнопки "Вход" */
+}
+
+/* Добавление рамки только к кнопке "Создать аккаунт" */
+.main-content-auth-buttons a.create-account-button, .auth-buttons a.create-account-button {
+    border: 2px solid white; /* Добавление рамки к кнопке "Создать аккаунт" */
+}
+.main-content-auth-buttons a.create-account-button{
+    border: 2px solid #423CDB;
+}
+/* Эффект "затемнения" при наведении на кнопку "Вход" */
+.auth-buttons a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Затемнение фона при наведении */
+    transition: background-color 0.5s ease; /* Плавное изменение цвета фона */
+}
+.main-content-auth-buttons a:hover{
+    background-color: rgba(160,160,164,0.3);
+    transition: background-color 0.5s ease;
+}
+
+/* Стили для основного контейнера страницы */
+
+
+/* Стили для уменьшения размера изображения */
+.steps-image {
+    width: 110px;
+    height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
+}
+
+
+/* Стили для формы восстановления пароля */
+/* Стили для формы восстановления пароля */
+/* Стили для формы восстановления пароля */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.password-recovery-body{
+    background: linear-gradient(to bottom, #f0f0f0, #dddddd);
+}
+.recovery-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 400px;
+    width: 80%;
+    border:#423CDB 1px solid;
+}
+
+.recovery-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.recovery-form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: 500;
+}
+
+.recovery-form input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.recovery-form input[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #423CDB;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.recovery-form input[type="submit"]:hover {
+    background-color: #3367d6;
+}
+
+
+
+
+
