@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name" translatable="false">Ally</string>
+    <string name="registration_title">Регистрация</string>
+    <string name="registration_input_name">Имя</string>
+    <string name="registration_input_surname">Фамилия</string>
+    <string name="registration_input_email" translatable="false">Email</string>
+    <string name="registration_input_password">Пароль</string>
+    <string name="registration_input_repassword">Повторите пароль</string>
+    <string name="registration_submit_btn">Зарегистрироваться</string>
+    <string name="reg_to_auth_btn">Войти</string>
+
+    <string name="auth_title">Вход</string>
+    <string name="auth_input_email" translatable="false">Email</string>
+    <string name="auth_input_password">Пароль</string>
+    <string name="auth_submit_btn">Войти</string>
+    <string name="auth_to_reg_btn">Зарегистрироваться</string>
+</resources>

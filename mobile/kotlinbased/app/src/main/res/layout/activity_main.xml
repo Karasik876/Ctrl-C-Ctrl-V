@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F5FA"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/registration_title"
+        android:textColor="#040C0C"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/user_name"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/registration_input_name"
+        android:inputType="text"
+        android:textColor="#040C0C"
+        android:textColorHint="#5E5E5E"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/user_surname"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textColorHint="#5E5E5E"
+        android:textColor="#040C0C"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/registration_input_surname"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/user_email"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#5E5E5E"
+        android:textColor="#040C0C"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/registration_input_email"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/user_password"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColorHint="#5E5E5E"
+        android:textColor="#040C0C"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/registration_input_password"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/user_repassword"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColorHint="#5E5E5E"
+        android:textColor="#040C0C"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_medium"
+        android:hint="@string/registration_input_repassword"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/reg_submit_btn"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#040C0B"
+        android:textColor="#F4F7FB"
+        android:text="@string/registration_submit_btn" />
+
+    <TextView
+        android:id="@+id/link_to_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/reg_to_auth_btn"
+        android:textColor="#040C0C"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/link_to_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Камера"
+        android:textColor="#040C0C"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</LinearLayout>
