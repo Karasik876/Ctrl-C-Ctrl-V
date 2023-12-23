@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название вашей страницы</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Подключение вашего CSS файла -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Patua+One&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="main-header">
+    <nav class="main-nav">
+        <div class="left-section">
+            <h1 class="project-name"><a href="index.html">Ally</a></h1>
+            <a href="templates.html" class="nav-link">Шаблоны тестов</a>
+            <a href="tests.html" class="nav-link">Тесты</a>
+        </div>
+        <div class="right-section">
+            <div class="auth-buttons">
+                <a href="login.html" class="login-button">Вход</a>
+                <a href="registration.html" class="create-account-button">Создать аккаунт</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="content-page tests-page">
+    <div class="test-info">
+        <p>Тест: <strong class="test-name">Здесь название теста</strong></p>
+        <p>Класс: <strong class="class-name">Здесь название класса</strong></p>
+    </div>
+    <div class="test-about">
+        <div class="about-header">
+            <h2>О ТЕСТЕ</h2>
+            <button class="edit-button">Изменить</button>
+        </div>
+        <hr>
+        <table class="about-table">
+            <tr>
+                <td>Имя:</td>
+                <td><span class="test-table-name">Здесь название теста</span></td>
+            </tr>
+            <tr>
+                <td>Шаблон теста:</td>
+                <td><span class="test-template">текст</span></td>
+            </tr>
+            <tr>
+                <td>Дата:</td>
+                <td><span class="test-date">текст</span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="answer-key">
+        <div class="answer-header">
+            <h2>ОТВЕТЫ</h2>
+            <a href="new_test.html" class="edit-button">Изменить</a>
+        </div>
+    </div>
+    <div class="graded-tests">
+
+    </div>
+</main>
+
+<script>
+    function handleSubmit(event) {
+        event.preventDefault();
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm_password').value;
+    }
+</script>
+</body>
+
+</html>

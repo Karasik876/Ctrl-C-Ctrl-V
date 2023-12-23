@@ -17,7 +17,7 @@
         <div class="left-section">
             <h1 class="project-name"><a href="index.html">Ally</a></h1>
             <a href="templates.html" class="nav-link">Шаблоны тестов</a>
-            <a href="tests.html" class="nav-link">Тесты</a>
+            <a href="test_info.html" class="nav-link">Тесты</a>
         </div>
         <div class="right-section">
             <div class="auth-buttons">
@@ -27,53 +27,42 @@
         </div>
     </nav>
 </header>
-<main class="content-page tests-page">
-    <div class="test-info">
-        <p>Тест: <strong class="test-name">Здесь название теста</strong></p>
-        <p>Класс: <strong class="class-name">Здесь название класса</strong></p>
-    </div>
-    <div class="test-about">
-        <div class="about-header">
-            <h2>О ТЕСТЕ</h2>
-            <button class="edit-button">Изменить</button>
-        </div>
-        <hr>
-        <table class="about-table">
-            <tr>
-                <td>Имя:</td>
-                <td><span class="test-table-name">Здесь название теста</span></td>
-            </tr>
-            <tr>
-                <td>Шаблон теста:</td>
-                <td><span class="test-template">текст</span></td>
-            </tr>
-            <tr>
-                <td>Дата:</td>
-                <td><span class="test-date">текст</span></td>
-            </tr>
-        </table>
-    </div>
-    <div class="answer-key">
-        <div class="answer-header">
-            <h2>ОТВЕТЫ</h2>
-            <a href="new_test.html" class="edit-button">Изменить</a>
-        </div>
-    </div>
-    <div class="graded-tests">
 
+<main class="content-page tests-page">
+    <h1>Все тесты</h1>
+
+    <div class="controls">
+        <button class="button submit-button" onclick="window.location.href='new_test.html'">Создать тест</button>
+        <button class="button delete-button">Удалить выбранное</button>
     </div>
+    <div class="tests-table-container">
+        <table class="tests-table">
+            <thead>
+            <tr>
+                <th>Класс</th>
+                <th>Имя теста</th>
+                <th>Дата</th>
+                <th>Вопросы</th>
+            </tr>
+            </thead>
+            <tbody id="tests-table-body">
+                <td>test_class</td>
+                <td><a href="test_info.html">test_testName</a></td>
+                <td>test_date</td>
+                <td>test_template</td>
+            </tbody>
+        </table>
+        <div class="no-data" > <!-- style="display: none;" - добавить условие, проверку на наличие тестов -->
+            <p>Данные отсутствуют в таблице</p>
+        </div>
+    </div>
+
 </main>
 
-<script>
-    function handleSubmit(event) {
-        event.preventDefault();
-        const firstName = document.getElementById('first_name').value;
-        const lastName = document.getElementById('last_name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirm_password').value;
-    }
-</script>
+<footer class="main-footer">
+
+</footer>
+
 </body>
 
 </html>

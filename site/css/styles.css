@@ -324,6 +324,40 @@ hr {
     font-weight: bold;
 }
 
+.tests-table{
+    background-color: #CCCCCC;
+    margin: 0 auto;
+    padding: 0;
+}
+.tests-table tr th{
+    background-color: #423CDB;
+    color: white;
+    padding: 20px 40px;
+
+}
+.tests-table tbody td{
+    background-color: white;
+    padding: 3px;
+}
+.tests-table-container {
+    background-color: #333333;
+    margin: 0 auto;
+    position: relative;
+    width: max-content;
+}
+.no-data {
+    border: 2px solid #CCCCCC;
+    border-top-width: 1px;
+    width: 100%;
+    color: #333333;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+.no-data p{
+    margin: 6px;
+}
+
 
 
 @media screen and (max-width: 768px) {
