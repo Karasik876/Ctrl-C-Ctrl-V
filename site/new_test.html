@@ -27,30 +27,43 @@
         </div>
     </nav>
 </header>
-<main class="content-page registration-page">
-    <h1>Регистрация</h1>
-    <form class="form registration-form" onsubmit="handleSubmit(event)">
+<main class="content-page new-test-page">
+    <h1>Создать новый тест</h1>
+    <form class="form new-test-form" onsubmit="handleSubmit(event)">
         <div class="form-group">
-            <label for="first_name">Имя</label>
-            <input type="text" id="first_name" name="first_name" required>
+            <label for="test_name">Название теста</label>
+            <input type="text" id="first_name" name="test_name" required>
         </div>
         <div class="form-group">
-            <label for="last_name">Фамилия</label>
-            <input type="text" id="last_name" name="last_name" required>
+            <label for="test_template">Шаблон</label>
+            <select id="test_template" name="test_template" required>
+                <option value="10">10 вопросов</option>
+                <option value="20">20 вопросов</option>
+
+            </select>
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <label for="test_date">Дата</label>
+            <input type="date" id="test_date" name="test_date" required readonly>
         </div>
+
+        <script>
+            const dateInput = document.getElementById('test_date');
+            const currentDate = new Date();
+
+            const year = currentDate.getFullYear();
+            let month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // +1 потому что месяцы начинаются с 0
+            let day = currentDate.getDate().toString().padStart(2, '0');
+
+            dateInput.value = `${year}-${month}-${day}`; // передаём в таком виде, но в браузере отображатся по-другому
+        </script>
+
         <div class="form-group">
-            <label for="password">Пароль</label>
-            <input type="password" id="password" name="password" required>
+            <label for="test_class">Класс</label>
+            <input type="text" id="password" name="test_class" readonly>
         </div>
-        <div class="form-group">
-            <label for="confirm_password">Подтвердите пароль</label>
-            <input type="password" id="confirm_password" name="confirm_password" required>
-        </div>
-        <button class="button submit-button" type="submit">Создать аккаунт</button>
+        <button class="button submit-button" type="submit">Создать тест</button>
+        <button class="button close-button" onclick="window.location.href='tests.html'">Закрыть</button>
     </form>
 
     <div class="login-existing">
