@@ -226,25 +226,31 @@ label{
     padding-top: 50px;
     border-radius: 8px;
 }
-
+.registration-page h1{
+    margin-bottom: 0;
+    margin-top: 40px;
+}
 .form-group {
     display: flex;
     margin-bottom: 15px;
-
+    align-items: center;
     justify-content: flex-end;
+
 }
 .form-group input {
     flex: 1;
     max-width: 448px;
     border-radius: 3px;
     border-width: 1px;
-    border-color: grey;
     margin-left: 20px;
+    height: 23px;
+    border: 1px solid darkgrey;
+    background-color: #FFFFFF;
 }
 .form-group label{
     margin-left: auto;
 }
-.form .button, .controls .button, .tests-back-button{
+.form .button, .controls .button, .tests-back-button, .submit-button{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 14px;
@@ -256,9 +262,10 @@ label{
     border-width: 0;
     max-width: 148px;
     margin: 0 auto;
+    cursor: pointer;
 }
 
-.form .button:hover, .controls .button:hover, .tests-back-button:hover{
+.form .button:hover, .controls .button:hover, .tests-back-button:hover, .submit-button:hover{
     background-color: white;
     color: #423CDB;
     transition: background-color 0.5s ease;
@@ -276,7 +283,7 @@ label{
     color: black;
     box-shadow: 0px 0px 5px 5px rgba(128,128,128, 0.1);
 }
-.form .button:active, .controls .button:active{
+.form .button:active, .controls .button:active, .submit-button:active{
     transform: translateY(2px);
 }
 
@@ -295,8 +302,64 @@ label{
     color: black;
 }
 .registration-form{
-    background-color: lightsteelblue;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+}
+/* Стили для страницы с ШАБЛОНАМИ*/
+.templates-page{
+    width: min-content;
+    margin: 0 auto;
+
+    margin-top: 110px;
+}
+.templates-page h1{
+    font-weight: 300;
+}
+
+.template-images{
+    display: flex;
+    width: min-content;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+
+    padding: 50px 180px;
+
+}
+.download-buttons{
+    display: flex;
+    flex-direction: column;
+
+}
+.download-buttons button{
+    margin-bottom: 12px;
+    height: 33px;
+    background-color: #423CDB;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 20px;
+}
+.download-buttons button:hover{
+    background-color: rgba(0,0,139,0.9);
+}
+.download-buttons button:active{
+    transform: translateY(3px);
+}
+.download-buttons button:last-child{
+    margin-bottom: 0;
+}
+.template img{
+    border: 1px solid #333333;
+    width: 195px;
+    height: 267px;
+}
+.template p{
+    font-family: "Open Sans",sans-serif;
+    font-size: 18px;
+}
+.template:last-child{
+    margin-left: 200px;
 }
 
 /* Стили для страницы с тестами*/
@@ -444,9 +507,8 @@ hr {
 
 }
 .answer-sheet{
-
     padding: 100px 60px;
-
+    padding-top: 80px;
     background-color: rgba(255,255,255, 0.6);
 }
 .answers-wrapper{
@@ -471,13 +533,15 @@ hr {
 }
 .test-edit-buttons{
     margin: 0 auto;
-
     display: flex;
 }
 .test-edit-buttons .tests-back-button{
     display: inline-block;
     max-width: 200px;
+    min-width: 130px;
+    min-height: 30px;
     color: black;
+    font-size: 16px;
 }
 .test-edit-buttons .tests-back-button:hover{
     background-color: rgb(208,208,208);
@@ -488,6 +552,15 @@ hr {
 
 }
 
+#test-b .tests-back-button{
+    display: flex;
+    border: 2px solid #333333;
+    justify-content: center;
+    align-items: center;
+}
+#test-b .tests-back-button:active{
+    transform: translateY(2px);
+}
 
 
 @media screen and (max-width: 768px) {
@@ -527,6 +600,15 @@ hr {
     }
     .form-group input{
         margin: 0;
+    }
+    .template-images{
+        display: flex;
+        flex-direction: column;
+    }
+    .template:last-child{
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 50px;
     }
 }
 
