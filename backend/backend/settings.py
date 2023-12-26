@@ -7,7 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 config = dotenv_values(f'{BASE_DIR}/.env')
 SECRET_KEY = config['SECRET_KEY']
 AUTH_USER_MODEL = 'users.UserAccount'
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', '192.168.0.106', 'localhost:4173']
+AWS_SECRET = config['AWS_SECRET_ACCESS_KEY']
+AWS_ACCESS = config['AWS_ACCESS_KEY_ID']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -24,7 +26,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'users',
-    'tests',
+    'quizzes',
     'classes',
     'sheets',
 ]
@@ -32,6 +34,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -40,6 +43,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
@@ -91,14 +95,14 @@ DJOSER = {
     'USER_CREATE_PASSWORD_RETYPE': True,
     'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
-    'SEND_CONFIRMATION_EMAIL': True,
+    'SEND_CONFIRMATION_EMAIL': False,
     'SET_USERNAME_RETYPE': True,
     'SET_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
     'LOGOUT_ON_PASSWORD_CHANGE': True,
     'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': 'activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': True,
+    'SEND_ACTIVATION_EMAIL': False,
     'SERIALIZERS': {
         'user_create': 'users.serializers.UserCreateSerializer',
         'user': 'users.serializers.UserCreateSerializer',
@@ -107,16 +111,24 @@ DJOSER = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
 }
 
 SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('JWT',),
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(weeks=2),
+    'REFRESH_TOKEN_LIFETIME': timedelta(weeks=4),
     'AUTH_TOKEN_CLASSES': (
         'rest_framework_simplejwt.tokens.AccessToken',
     ),

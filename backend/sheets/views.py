@@ -17,8 +17,9 @@ class SheetViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(self):
         if self.action == 'create_post':
-            return SheetCreateSerializer
-        return SheetDetailSerializer
+            self.serializer_class = SheetCreateSerializer
+        self.serializer_class = SheetDetailSerializer
+        return self.serializer_class
 
     @action(detail=True)
     def create_post(self, request: Request, *args, **kwargs):

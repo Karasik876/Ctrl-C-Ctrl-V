@@ -1,6 +1,6 @@
 from django.db import models
 from users.models import UserAccount
-from tests.models import Test
+from quizzes.models import Test
 from classes.models import Class
 
 
