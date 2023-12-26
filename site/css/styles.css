@@ -71,7 +71,7 @@ body{
 }
 /* Стили для кнопок входа и создания аккаунта */
 /* Добавление шрифта Open Sans Semibold к кнопкам "Вход" и "Создать аккаунт" */
-.main-content-auth-buttons a, .auth-buttons a {
+.main-content-auth-buttons a, .auth-buttons a, .tests-back-button{
     font-family: 'Open Sans', sans-serif; /* Использование шрифта Open Sans */
     font-weight: 600; /* Semibold в Open Sans */
     font-size: 13px; /* Размер шрифта кнопок */
@@ -81,12 +81,12 @@ body{
     padding: 8px 15px;
     border-radius: 4px; /* Закругленные углы для кнопки "Создать аккаунт" */
 }
-.main-content-auth-buttons a{
+.main-content-auth-buttons a, .tests-back-button{
     color: #423CDB;
     font-size: 16px;
 }
 /* Указание шрифта для конкретных классов кнопок */
-.main-content-auth-buttons a.login-button, .auth-buttons a.login-button {
+.main-content-auth-buttons a.login-button, .auth-buttons a.login-button  {
     font-family: 'Open Sans', sans-serif; /* Использование шрифта Open Sans для кнопки "Вход" */
     font-weight: 600; /* Semibold в Open Sans */
     border: none; /* Удаление рамки у кнопки "Вход" */
@@ -100,7 +100,7 @@ body{
     border: 2px solid #423CDB;
 }
 /* Эффект "затемнения" при наведении на кнопку "Вход" */
-.auth-buttons a:hover {
+.auth-buttons a:hover, .tests-back-button:hover {
     background-color: rgba(255, 255, 255, 0.95); /* Затемнение фона при наведении */
     transition: background-color 0.5s ease; /* Плавное изменение цвета фона */
     color: #423CDB;
@@ -244,7 +244,7 @@ label{
 .form-group label{
     margin-left: auto;
 }
-.form .button{
+.form .button, .controls .button, .tests-back-button{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 14px;
@@ -257,20 +257,38 @@ label{
     max-width: 148px;
     margin: 0 auto;
 }
-.form .button:hover{
+
+.form .button:hover, .controls .button:hover, .tests-back-button:hover{
     background-color: white;
     color: #423CDB;
     transition: background-color 0.5s ease;
     box-shadow: 0px 0px 5px 5px rgba(59, 72, 236, 0.2);
 }
-.form .button:active{
+.controls .button{
+    font-size: 15px;
+    border: 1px solid #BCC2CB;
+    margin: 5px 20px;
+    padding: 5px 8px;
+    border-radius: 2px;
+}
+.controls .delete-button:hover, .tests-back-button:hover{
+    background-color: rgba(128,128,128, 0.15);
+    color: black;
+    box-shadow: 0px 0px 5px 5px rgba(128,128,128, 0.1);
+}
+.form .button:active, .controls .button:active{
     transform: translateY(2px);
 }
-.form .close-button{
+
+.form .close-button, .controls .delete-button, .tests-back-button{
     background-color: white;
     color: #333333;
     border: 1px solid #CCCCCC;
     margin-top: 10px;
+}
+.delete-button{
+    background-color: #FFFFFF;
+    min-width: 195px;
 }
 .form .close-button:hover{
     background-color: rgba(156,156,156, 0.1);
@@ -313,6 +331,7 @@ label{
 
 hr {
     margin: 10px 0;
+
 }
 
 .about-table {
@@ -328,22 +347,32 @@ hr {
     background-color: #CCCCCC;
     margin: 0 auto;
     padding: 0;
+
 }
 .tests-table tr th{
     background-color: #423CDB;
     color: white;
+    padding: 20px 60px;
+
+
+}
+.tests-table tr th:first-child{
+    background-color: #ffffff;
+    color: white;
     padding: 20px 40px;
 
 }
-.tests-table tbody td{
+.tests-table tbody tr td{
     background-color: white;
-    padding: 3px;
+    padding: 6px 5px;
 }
+
 .tests-table-container {
     background-color: #333333;
     margin: 0 auto;
     position: relative;
     width: max-content;
+
 }
 .no-data {
     border: 2px solid #CCCCCC;
@@ -356,6 +385,107 @@ hr {
 }
 .no-data p{
     margin: 6px;
+}
+.checkbox-container input[type="checkbox"] {
+    transform: scale(1.75);
+    vertical-align: middle;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+
+
+/* Стили для edit_test_answers.html */
+
+.answer-sheet {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.answer-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Стили для bubbles */
+.bubble {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bubble:hover {
+    background-color: #333;
+    color: white;
+}
+.bubble.selected {
+    background-color: #423CDB;
+    color: white;
+    border: 2px solid mediumblue;
+}
+
+.bubble.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.answers-full-content{
+    height: min-content;
+    background-color: #B0C4DE;
+
+
+}
+.answer-sheet{
+
+    padding: 100px 60px;
+
+    background-color: rgba(255,255,255, 0.6);
+}
+.answers-wrapper{
+    border: 2px solid black;
+    width: min-content;
+    padding: 5px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+
+}
+.h1button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.h1button h1{
+    margin: 0;
+    margin-bottom: 30px;
+}
+.test-edit-buttons{
+    margin: 0 auto;
+
+    display: flex;
+}
+.test-edit-buttons .tests-back-button{
+    display: inline-block;
+    max-width: 200px;
+    color: black;
+}
+.test-edit-buttons .tests-back-button:hover{
+    background-color: rgb(208,208,208);
+}
+#saveButton:hover{
+    background-color: rgb(0,105,62);
+    color: white;
+
 }
 
 
