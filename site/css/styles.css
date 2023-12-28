@@ -1,4 +1,4 @@
-/* Стили для хедера и его содержимого */
+
 .main-header {
     background-color: #423CDB;
     height: 60px;
@@ -14,22 +14,22 @@ body{
 .main-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Центрирование по вертикали */
-    height: 100%; /* Заполнение всей доступной высоты хедера */
-    max-width: 1100px; /* Ограничение ширины .main-nav */
-    margin: 0 auto; /* Центрирование .main-nav на странице */
-    padding: 0 20px; /* Добавление отступов внутри .main-nav */
-    width: 100%; /* Добавлено для адаптивности */
-    box-sizing: border-box; /* Учитывать padding и border в расчете ширины */
-    flex-wrap: wrap; /* Разрешить перенос элементов на следующую строку */
+    align-items: center;
+    height: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 
-/* Стили для названия проекта "Ally" */
-/* Добавление шрифта Patua One к названию "Ally" */
+
+
 .project-name {
-    font-family: 'Patua One', sans-serif; /* Использование шрифта Patua One */
-    font-size: 30px; /* Размер шрифта названия проекта */
+    font-family: 'Patua One', sans-serif;
+    font-size: 30px;
     color: white;
     line-height: 20px;
     margin: 0;
@@ -39,22 +39,22 @@ body{
     text-decoration: none;
 }
 .project-name:active {
-    transform: translateY(2px); /* Пример сдвига вниз при нажатии */
+    transform: translateY(2px);
 }
-/* Стили для шаблонов тестов */
+
 /* Добавленные стили для левой и правой частей хедера */
 .left-section {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Увеличение размера left-section */
-    text-overflow: ellipsis; /* Добавление многоточия для текста, выходящего за пределы */
-    white-space: nowrap; /* Предотвращение переноса текста */
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .right-section {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Увеличение размера right-section */
+    flex-grow: 1;
     justify-content: flex-end;
 }
 
@@ -70,16 +70,16 @@ body{
     transform: translateY(1px);
 }
 /* Стили для кнопок входа и создания аккаунта */
-/* Добавление шрифта Open Sans Semibold к кнопкам "Вход" и "Создать аккаунт" */
+
 .main-content-auth-buttons a, .auth-buttons a, .tests-back-button{
-    font-family: 'Open Sans', sans-serif; /* Использование шрифта Open Sans */
-    font-weight: 600; /* Semibold в Open Sans */
-    font-size: 13px; /* Размер шрифта кнопок */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
     color: white;
     text-decoration: none;
-    margin-left: 20px; /* Пространство между кнопками */
+    margin-left: 20px;
     padding: 8px 15px;
-    border-radius: 4px; /* Закругленные углы для кнопки "Создать аккаунт" */
+    border-radius: 4px;
 }
 .main-content-auth-buttons a, .tests-back-button{
     color: #423CDB;
@@ -87,22 +87,22 @@ body{
 }
 /* Указание шрифта для конкретных классов кнопок */
 .main-content-auth-buttons a.login-button, .auth-buttons a.login-button  {
-    font-family: 'Open Sans', sans-serif; /* Использование шрифта Open Sans для кнопки "Вход" */
-    font-weight: 600; /* Semibold в Open Sans */
-    border: none; /* Удаление рамки у кнопки "Вход" */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    border: none;
 }
 
 /* Добавление рамки только к кнопке "Создать аккаунт" */
 .main-content-auth-buttons a.create-account-button, .auth-buttons a.create-account-button {
-    border: 2px solid white; /* Добавление рамки к кнопке "Создать аккаунт" */
+    border: 2px solid white;
 }
 .main-content-auth-buttons a.create-account-button{
     border: 2px solid #423CDB;
 }
 /* Эффект "затемнения" при наведении на кнопку "Вход" */
 .auth-buttons a:hover, .tests-back-button:hover {
-    background-color: rgba(255, 255, 255, 0.95); /* Затемнение фона при наведении */
-    transition: background-color 0.5s ease; /* Плавное изменение цвета фона */
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: background-color 0.5s ease;
     color: #423CDB;
 }
 .main-content-auth-buttons a:hover{
@@ -144,10 +144,10 @@ label{
 	margin-top: 40px;
     color: lightcyan;
 }
-/* Стили для уменьшения размера изображения */
+
 .steps-image {
     width: 120px;
-    height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
+    height: auto;
 }
 /* Стили для формы восстановления пароля */
 .container {
@@ -223,12 +223,13 @@ label{
     max-width: 648px;
     margin: 0 auto;
     padding-right: 200px;
-    padding-top: 50px;
+    padding-top: 40px;
     border-radius: 8px;
 }
 .registration-page h1{
     margin-bottom: 0;
-    margin-top: 40px;
+    margin-top: 50px;
+    font-weight: 300;
 }
 .form-group {
     display: flex;
@@ -237,7 +238,7 @@ label{
     justify-content: flex-end;
 
 }
-.form-group input {
+.form-group input, .form-group select{
     flex: 1;
     max-width: 448px;
     border-radius: 3px;
@@ -250,6 +251,7 @@ label{
 .form-group label{
     margin-left: auto;
 }
+
 .form .button, .controls .button, .tests-back-button, .submit-button{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
@@ -271,6 +273,10 @@ label{
     transition: background-color 0.5s ease;
     box-shadow: 0px 0px 5px 5px rgba(59, 72, 236, 0.2);
 }
+.tests-page h1{
+    margin-top: 70px;
+}
+
 .controls .button{
     font-size: 15px;
     border: 1px solid #BCC2CB;
@@ -292,6 +298,10 @@ label{
     color: #333333;
     border: 1px solid #CCCCCC;
     margin-top: 10px;
+
+}
+.new-test-buttons{
+    padding:0;
 }
 .delete-button{
     background-color: #FFFFFF;
@@ -302,14 +312,32 @@ label{
     color: black;
 }
 .registration-form{
-    padding-bottom: 15px;
+    padding-bottom: 8px;
+}
+.registration-form input{
+    height: 25px;
+}
+.auth-utilities{
+    margin-top: 30px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+}
+.login-existing{
+    margin-top: 23px;
+
+}
+.login-existing p{
+    margin-bottom: 7px;
 }
 /* Стили для страницы с ШАБЛОНАМИ*/
 .templates-page{
     width: min-content;
     margin: 0 auto;
 
-    margin-top: 110px;
+    margin-top: 75px;
 }
 .templates-page h1{
     font-weight: 300;
@@ -360,6 +388,9 @@ label{
 }
 .template:last-child{
     margin-left: 200px;
+}
+.template img:hover{
+    box-shadow: 9px 9px 6px -6px rgba(34, 60, 80, 0.2);
 }
 
 /* Стили для страницы с тестами*/
@@ -562,6 +593,65 @@ hr {
     transform: translateY(2px);
 }
 
+/* Стили для поля ввода пароля */
+#forPass input, #forConfirmPass input{
+    width: 448px;
+}
+
+.password-input {
+    display: flex;
+    align-items: center;
+    padding-right: 31px;
+}
+.toggle-password {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/eye-icon.svg');
+    background-size: cover;
+    margin-left: -55px;
+}
+
+.password-input .toggle-password:hover{
+    opacity: 0.7;
+}
+.password-input .toggle-password:active{
+    opacity: 0.5;
+}
+
+.confirm-password-input {
+    display: flex;
+    align-items: center;
+    padding-right: 31px;
+}
+
+.toggle-confirm-password {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/eye-icon.svg');
+    background-size: cover;
+    margin-left: -55px;
+}
+
+.confirm-password-input .toggle-confirm-password:hover {
+    opacity: 0.7;
+}
+
+.confirm-password-input .toggle-confirm-password:active {
+    opacity: 0.5;
+}
+
+.new-test-form .form-group #test_template{
+    min-width: 454px;
+}
+.new-test-form .form-group #test_date{
+    min-width: 451px;
+}
+
+
+
+
 
 @media screen and (max-width: 768px) {
     .create-content {
@@ -609,6 +699,30 @@ hr {
         margin-right: 0;
         margin-left: 0;
         margin-top: 50px;
+    }
+
+    #forPass input, #forConfirmPass input {
+        width: 220px;
+    }
+    .password-input, .confirm-password-input {
+        padding-right: 1px;
+    }
+
+    .toggle-password, .toggle-confirm-password {
+        margin-left: -25px;
+    }
+    .password-input, .confirm-password-input{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .new-test-form .form-group #test_template{
+        min-width: 220px;
+    }
+    .new-test-form .form-group #test_date{
+        min-width: 220px;
+    }
+    .form{
+        padding-right: 0;
     }
 }
 

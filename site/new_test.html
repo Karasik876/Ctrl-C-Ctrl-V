@@ -32,7 +32,7 @@
     <form class="form new-test-form" onsubmit="handleSubmit(event)">
         <div class="form-group">
             <label for="test_name">Название теста</label>
-            <input type="text" id="first_name" name="test_name" required>
+            <input type="text" id="first_name" name="test_name" placeholder="Название теста" required>
         </div>
         <div class="form-group">
             <label for="test_template">Шаблон</label>
@@ -60,16 +60,15 @@
 
         <div class="form-group">
             <label for="test_class">Класс</label>
-            <input type="text" id="password" name="test_class" readonly>
+            <input type="text" id="password" name="test_class" placeholder="Класс" readonly>
         </div>
+
+    </form>
+    <div class="form new-test-buttons">
         <button class="button submit-button" type="submit">Создать тест</button>
         <button class="button close-button" onclick="window.location.href='tests.html'">Закрыть</button>
-    </form>
-
-    <div class="login-existing">
-        <p>Уже есть аккаунт?</p>
-        <a href="login.html">Войти в существующий аккаунт</a>
     </div>
+
 </main>
 
 <script>
@@ -80,7 +79,7 @@
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirm_password').value;
-        // Ваша обработка данных формы
+
     }
 </script>
 </body>
