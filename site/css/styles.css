@@ -93,13 +93,13 @@ body{
 }
 
 /* Добавление рамки только к кнопке "Создать аккаунт" */
-.main-content-auth-buttons a.create-account-button, .auth-buttons a.create-account-button {
+.main-content-auth-buttons a.create-account-button, .auth-buttons a.create-account-button, a.edit-button, .edit-button {
     border: 2px solid white;
 }
 .main-content-auth-buttons a.create-account-button{
     border: 2px solid #423CDB;
 }
-/* Эффект "затемнения" при наведении на кнопку "Вход" */
+
 .auth-buttons a:hover, .tests-back-button:hover {
     background-color: rgba(255, 255, 255, 0.95);
     transition: background-color 0.5s ease;
@@ -113,7 +113,7 @@ body{
 label{
     cursor: text;
 }
-/* Стили для расположения элементов на главной странице*/
+
 .create{
 	display:flex;
 
@@ -266,8 +266,10 @@ label{
     margin: 0 auto;
     cursor: pointer;
 }
-
-.form .button:hover, .controls .button:hover, .tests-back-button:hover, .submit-button:hover{
+a.edit-button{
+    border:none;
+}
+.form .button:hover, .controls .button:hover, .tests-back-button:hover, .submit-button:hover, a.edit-button:hover{
     background-color: white;
     color: #423CDB;
     transition: background-color 0.5s ease;
@@ -399,8 +401,8 @@ label{
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    max-width: 600px;
-    margin-left: 20px;
+    max-width: 500px;
+
 }
 
 .about-header {
@@ -423,45 +425,81 @@ label{
     cursor: pointer;
 }
 
+.edit-button:active{
+    transform:translateY(2px);
+}
 hr {
     margin: 10px 0;
 
 }
-
+.about-header h2{
+    color: #423CDB;
+}
 .about-table {
     width: 100%;
+    border-collapse: collapse;
+
 }
 
+.test-about{
+    margin: 0 auto;
+    background-color: #FFFFFF;
+
+}
 .about-table tr td:first-child {
-    width: 150px;
+    width: 115px;
     font-weight: bold;
 }
+.about-table td {
+    border: 2px solid #CCCCCC;
+    height: 30px;
+    text-align: left;
+    padding: 3px;
+}
 
-.tests-table{
+
+.test-info-title{
+    font-size: 23px;
+
+}
+.about-table tr:nth-child(odd) {
+    background-color: #E3E3E3; /* Цвет фона для нечетных строк */
+}
+
+.about-table tr:nth-child(even) {
+    background-color: #FFFFFF; /* Цвет фона для четных строк */
+}
+
+.test-info-page{
+    width: 1150px;
+    padding-top: 80px;
+    margin: 0 auto;
+}
+.tests-table, .test-info-table{
     background-color: #CCCCCC;
     margin: 0 auto;
     padding: 0;
 
 }
-.tests-table tr th{
+.tests-table tr th, .test-info-table tr th{
     background-color: #423CDB;
     color: white;
     padding: 20px 60px;
 
 
 }
-.tests-table tr th:first-child{
+.tests-table tr th:first-child, .test-info-table tr th:first-child{
     background-color: #ffffff;
     color: white;
     padding: 20px 40px;
 
 }
-.tests-table tbody tr td{
+.tests-table tbody tr td, .test-info-table tbody tr td{
     background-color: white;
     padding: 6px 5px;
 }
 
-.tests-table-container {
+.tests-table-container, .test-info-table-container {
     background-color: #333333;
     margin: 0 auto;
     position: relative;
@@ -648,6 +686,39 @@ hr {
 .new-test-form .form-group #test_date{
     min-width: 451px;
 }
+
+/*
+.test-info-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    grid-template-areas:
+        "block1 block4"
+        "block2 block4"
+        "block3 block4";
+}
+
+.block1 {
+    grid-area: block1;
+}
+
+.block2 {
+    grid-area: block2;
+}
+
+.block3 {
+    grid-area: block3;
+}
+
+.block4 {
+    grid-area: block4;
+}
+.test-info-table-container{
+    align-self: center;
+
+}
+*/
 
 
 
