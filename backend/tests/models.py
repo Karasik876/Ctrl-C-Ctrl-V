@@ -5,7 +5,7 @@ from classes.models import Class
 
 class Test(models.Model):
     user = models.ForeignKey(UserAccount, on_delete=models.CASCADE, verbose_name='Пользователь')
-    the_class = models.ForeignKey(Class, on_delete=models.CASCADE, verbose_name='Класс')
+    the_class = models.ForeignKey(Class, on_delete=models.CASCADE, verbose_name='Класс', null=True)
     test_name = models.CharField(max_length=50, default='Новый тест', verbose_name='Название')
     questions = models.IntegerField(verbose_name='Кол-во вопросов')
     choices = models.IntegerField(verbose_name='Кол-во ответов')

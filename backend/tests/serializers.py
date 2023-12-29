@@ -7,7 +7,7 @@ class TestCreateSerializer(serializers.ModelSerializer):
         model = Test
         fields = (
             'user_id',
-            'the_class_id',
+            # 'the_class_id',
             'test_name',
             'questions',
             'choices',

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -40,6 +41,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 TEMPLATES = [
     {
@@ -65,7 +68,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'pgdb',
+        'HOST': 'localhost',
         'PORT': 5432,
 
     }
@@ -89,16 +92,16 @@ AUTH_PASSWORD_VALIDATORS = [
 DJOSER = {
     'LOGIN_FIELD': 'email',
     'USER_CREATE_PASSWORD_RETYPE': True,
-    'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
-    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
-    'SEND_CONFIRMATION_EMAIL': True,
+    # 'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
+    # 'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
+    # 'SEND_CONFIRMATION_EMAIL': True,
     'SET_USERNAME_RETYPE': True,
     'SET_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
     'LOGOUT_ON_PASSWORD_CHANGE': True,
     'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': 'activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': True,
+    # 'ACTIVATION_URL': 'activate/{uid}/{token}',
+    # 'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {
         'user_create': 'users.serializers.UserCreateSerializer',
         'user': 'users.serializers.UserCreateSerializer',
@@ -107,14 +110,21 @@ DJOSER = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
+        'rest_framework.permissions.AllowAny'
     ],
 }
 
 SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('JWT',),
+    'AUTH_HEADER_TYPES': ('Bearer',),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_TOKEN_CLASSES': (
@@ -123,15 +133,15 @@ SIMPLE_JWT = {
     "UPDATE_LAST_LOGIN": True,
 }
 
-SWAGGER_SETTINGS = {
-    'SECURITY_DEFINITIONS': {
-        'api_key': {
-            'type': 'apiKey',
-            'in': 'header',
-            'name': 'Authorization'
-        }
-    },
-}
+# SWAGGER_SETTINGS = {
+#     'SECURITY_DEFINITIONS': {
+#         'api_key': {
+#             'type': 'apiKey',
+#             'in': 'header',
+#             'name': 'Authorization'
+#         }
+#     },
+# }
 
 LANGUAGE_CODE = 'ru-ru'
 TIME_ZONE = 'Europe/Moscow'

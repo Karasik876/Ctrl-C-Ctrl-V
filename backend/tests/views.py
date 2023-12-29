@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework.request import Request
 from .serializers import *
 from .models import *
+from rest_framework.generics import ListAPIView
 
 
 class TestViewSet(viewsets.ModelViewSet):
@@ -30,7 +31,7 @@ class TestViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.create(request.data)
             return Response(status=status.HTTP_201_CREATED)
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @action(detail=True)
     def test_detail(self, request: Request, *args, **kwargs):
@@ -60,3 +61,9 @@ class TestViewSet(viewsets.ModelViewSet):
         test = get_object_or_404(self.Test, pk=kwargs["id"])
         test.delete()
         return Response(status=status.HTTP_200_OK)
+
+
+class TestListView(ListAPIView):
+    permission_classes = [IsAuthenticated,]
+    serializer_class = TestDetailSerializer
+    queryset = Test.objects.all()
