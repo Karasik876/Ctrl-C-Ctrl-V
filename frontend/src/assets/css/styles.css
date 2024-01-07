@@ -1,0 +1,370 @@
+/* Стили для хедера и его содержимого */
+.main-header {
+    background-color: #423CDB;
+    height: 60px;
+    width: 100%;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin:0;
+    background-color: #EFF3F8;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрирование по вертикали */
+    height: 100%; /* Заполнение всей доступной высоты хедера */
+    max-width: 1100px; /* Ограничение ширины .main-nav */
+    margin: 0 auto; /* Центрирование .main-nav на странице */
+    padding: 0 20px; /* Добавление отступов внутри .main-nav */
+    width: 100%; /* Добавлено для адаптивности */
+    box-sizing: border-box; /* Учитывать padding и border в расчете ширины */
+    flex-wrap: wrap; /* Разрешить перенос элементов на следующую строку */
+}
+
+
+/* Стили для названия проекта "Ally" */
+/* Добавление шрифта Patua One к названию "Ally" */
+.project-name {
+    font-family: 'Patua One', sans-serif; /* Использование шрифта Patua One */
+    font-size: 30px; /* Размер шрифта названия проекта */
+    color: white;
+    line-height: 20px;
+    margin: 0;
+}
+.project-name a{
+    color: white;
+    text-decoration: none;
+}
+.project-name:active {
+    transform: translateY(2px); /* Пример сдвига вниз при нажатии */
+}
+/* Стили для шаблонов тестов */
+/* Добавленные стили для левой и правой частей хедера */
+.left-section {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Увеличение размера left-section */
+    text-overflow: ellipsis; /* Добавление многоточия для текста, выходящего за пределы */
+    white-space: nowrap; /* Предотвращение переноса текста */
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Увеличение размера right-section */
+    justify-content: flex-end;
+}
+
+.nav-link{
+    font-size: 17px;
+    color: white;
+    line-height: 20px;
+    margin: 0;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.nav-link:active{
+    transform: translateY(1px);
+}
+/* Стили для кнопок входа и создания аккаунта */
+/* Добавление шрифта Open Sans Semibold к кнопкам "Вход" и "Создать аккаунт" */
+.main-content-auth-buttons a, .auth-buttons a {
+    font-family: 'Open Sans', sans-serif; /* Использование шрифта Open Sans */
+    font-weight: 600; /* Semibold в Open Sans */
+    font-size: 13px; /* Размер шрифта кнопок */
+    color: white;
+    text-decoration: none;
+    margin-left: 20px; /* Пространство между кнопками */
+    padding: 8px 15px;
+    border-radius: 4px; /* Закругленные углы для кнопки "Создать аккаунт" */
+}
+.main-content-auth-buttons a{
+    color: #423CDB;
+    font-size: 16px;
+}
+/* Указание шрифта для конкретных классов кнопок */
+.main-content-auth-buttons a.login-button, .auth-buttons a.login-button {
+    font-family: 'Open Sans', sans-serif; /* Использование шрифта Open Sans для кнопки "Вход" */
+    font-weight: 600; /* Semibold в Open Sans */
+    border: none; /* Удаление рамки у кнопки "Вход" */
+}
+
+/* Добавление рамки только к кнопке "Создать аккаунт" */
+.main-content-auth-buttons a.create-account-button, .auth-buttons a.create-account-button {
+    border: 2px solid white; /* Добавление рамки к кнопке "Создать аккаунт" */
+}
+.main-content-auth-buttons a.create-account-button{
+    border: 2px solid #423CDB;
+}
+/* Эффект "затемнения" при наведении на кнопку "Вход" */
+.auth-buttons a:hover {
+    background-color: rgba(255, 255, 255, 0.95); /* Затемнение фона при наведении */
+    transition: background-color 0.5s ease; /* Плавное изменение цвета фона */
+    color: #423CDB;
+}
+.main-content-auth-buttons a:hover{
+    background-color: rgba(0,0,139,0.3);
+    color: white;
+    transition: background-color 0.5s ease;
+}
+label{
+    cursor: text;
+}
+/* Стили для расположения элементов на главной странице*/
+.create{
+	display:flex;
+
+	margin: 0 auto 0 auto;
+	padding: 100px 70px;
+    box-shadow: 0px 0px 14px 2px rgba(34, 60, 80, 0.25);
+    background-color: #B0C4DE;
+    justify-content: center;
+}
+.create-content{
+	padding: 20px;
+	max-width: 600px;
+	margin-left: 75px;
+    color: white;
+
+}
+.create-content h2{
+	margin-top: 40px;
+    font-size: 34px;
+}
+.create-content-text{
+    background-color: #423CDB;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border-radius: 7px;
+}
+.create-content p{
+	margin-top: 40px;
+    color: lightcyan;
+}
+/* Стили для уменьшения размера изображения */
+.steps-image {
+    width: 120px;
+    height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
+}
+/* Стили для формы восстановления пароля */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+}
+.password-recovery-body{
+    background: linear-gradient(to bottom, #f0f0f0, #dddddd);
+}
+.recovery-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 400px;
+    width: 80%;
+    border:#423CDB 1px solid;
+    margin-top: -30px;
+}
+
+.recovery-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.recovery-form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: 500;
+}
+
+.recovery-form input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.recovery-form input[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #423CDB;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.recovery-form input[type="submit"]:hover {
+    background-color: darkblue;
+    box-shadow: 0px 0px 5px 5px rgba(59, 72, 236, 0.2);
+    color: white;
+}
+
+/* Стили для страницы регистрации */
+.content-page {
+    text-align: center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 648px;
+    margin: 0 auto;
+    padding-right: 200px;
+    padding-top: 50px;
+    border-radius: 8px;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 15px;
+
+    justify-content: flex-end;
+}
+.form-group input {
+    flex: 1;
+    max-width: 448px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: grey;
+    margin-left: 20px;
+}
+.form-group label{
+    margin-left: auto;
+}
+.form .button{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    line-height: 20px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    background-color: #423CDB;
+    border-width: 0;
+    max-width: 148px;
+    margin: 0 auto;
+}
+.form .button:hover{
+    background-color: white;
+    color: #423CDB;
+    transition: background-color 0.5s ease;
+    box-shadow: 0px 0px 5px 5px rgba(59, 72, 236, 0.2);
+}
+.form .button:active{
+    transform: translateY(2px);
+}
+.form .close-button{
+    background-color: white;
+    color: #333333;
+    border: 1px solid #CCCCCC;
+    margin-top: 10px;
+}
+.form .close-button:hover{
+    background-color: rgba(156,156,156, 0.1);
+    color: black;
+}
+.registration-form{
+    background-color: lightsteelblue;
+    padding-bottom: 20px;
+}
+
+/* Стили для страницы с тестами*/
+.test-about {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 600px;
+    margin-left: 20px;
+}
+
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.about-header h2 {
+    margin: 0;
+}
+
+.edit-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #423CDB;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+.about-table {
+    width: 100%;
+}
+
+.about-table tr td:first-child {
+    width: 150px;
+    font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .create-content {
+        margin: 0 auto;
+    }
+    .main-content-auth-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .steps-image{
+        height: 400px;
+        width: 110px;
+        margin: 0 auto;
+    }
+    .create{
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .login-button{
+        margin-bottom: 10px;
+    }
+    .left-section{
+        padding-top: 15px;
+    }
+    .right-section{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .main-header{
+        padding-bottom: 30px;
+    }
+    .registration-form{
+        padding-right: 0;
+    }
+    .form-group input{
+        margin: 0;
+    }
+}
+
+
+
